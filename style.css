@@ -1,0 +1,74 @@
+body {
+font-family: horizon;
+background:#dbd9c5;
+}
+
+#main {
+width: 60%;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+}
+
+label {
+width: 150px;
+display: inline-block;
+}
+
+button {
+display: block;
+margin-top: 20px;
+
+}
+
+
+p {text-align: left;
+	font-family: horizon;
+	font-size: 21px;
+	color: #674a33;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-right: 2px;
+}
+label{ font-family: horizon;
+	color:#737373;
+	padding-top:5px;
+ }
+
+ #questions {background:#dbd9c5;
+	max-width: 850px;
+	width: 90%;
+	position: relative;
+	margin: auto;
+	margin-bottom: 20px;
+	padding-bottom:5px;
+	
+
+}
+
+.row{
+	padding-left: 20px;
+
+}
+
+.jumbotron{
+	background-color:#674a33;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+
+

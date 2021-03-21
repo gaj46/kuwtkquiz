@@ -1,0 +1,198 @@
+<!--index.html-->
+<html>
+<head>
+    <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<title> Which Kardashian are you? </title>
+</head>
+<body>
+
+
+<div class="jumbotron ">
+<img src= "kuwtk.png" alt="kuwtk" class="center">
+</div>
+
+
+
+
+
+</style>
+</head>
+<body>
+<div id="main">
+
+<form  id="form1">
+<p>What is your favorite color?</p>
+<div class="container">
+<input type="radio" name="color" value="kim" id="black" /><label for="black">Black</label>
+<input type="radio" name="color" value="khloe" id="white" /><label for="white">White</label>
+<input type="radio" name="color" value="kourtney" id="turquoise" /><label for="turquoise">Turquoise</label>
+<input type="radio" name="color" value="kris" id="red" /><label for="red">Red</label></div>
+
+<p>Favorite vacation spot?</p>
+<div class="container">
+<input type="radio" name="vacation" value="kim" id="bora" /><label for="bora">Bora Bora</label>
+<input type="radio" name="vacation" value="khloe" id="barts" /><label for="barts">St. Barts</label>
+<input type="radio" name="vacation" value="kourtney" id="turks" /><label for="turk">Turks and Caicos</label>
+<input type="radio" name="vacation" value="kris" id="mexico" /><label for="mexico">Mexico</label>
+</div>
+
+<p>Favorite place to shop?</p>
+<div class="container">
+<input type="radio" name="shop" value="kim" id="zara" /><label for="zara">Zara</label>
+<input type="radio" name="shop" value="khloe" id="american" /><label for="american">Good American</label>
+<input type="radio" name="shop" value="kourtney" id="park" /><label for="park">25 Park</label>
+<input type="radio" name="shop" value="kris" id="costco" /><label for="costco">Costco</label>
+</div> 
+
+ <p>Pick a Style.</p>
+ <div class="container">
+<input type="radio" name="style" value="kim" id="minimalist" /><label for="minimalist">Minimalist</label>
+<input type="radio" name="style" value="khloe" id="fitness" /><label for="fitness">Fitness</label>
+<input type="radio" name="style" value="kourtney" id="sleek" /><label for="sleek natural">Sleek Natural</label>
+<input type="radio" name="style" value="kris" id="business" /><label for="business">Business Boss</label>
+</div>
+
+<p>What is your favorite food?</p>
+<div class="container">
+<input type="radio" name="food" value="kim" id="cheetos" /><label for="cheetos">Cheetos</label>
+<input type="radio" name="food" value="khloe" id="pizza" /><label for="pizza">Pizza</label>
+<input type="radio" name="food" value="kourtney" id="avocado" /><label for="avocado">Avocado</label>
+<input type="radio" name="food" value="kris" id="salad" /><label for="salad">Salad</label>
+</div>
+
+
+<button type="submit" value="Submit">Submit</button>
+</form>
+
+<p id="answer"></p>
+<p id="answer2"></p>
+<p id="answer3"></p>
+<p id="answer4"></p>
+
+</div>
+<script>
+ 
+    
+	document.getElementById("form1").onsubmit=function() {
+	   
+	  color = document.querySelector('input[name = "color"]:checked').value;
+	   
+	  
+	  vacation = document.querySelector('input[name = "vacation"]:checked').value;
+	   
+	  shop = document.querySelector('input[name = "shop"]:checked').value;
+
+	  style = document.querySelector('input[name = "style"]:checked').value;
+
+	  food = document.querySelector('input[name = "food"]:checked').value;
+
+	  console.log(color);
+	   console.log(vacation);
+	    console.log(shop);
+	     console.log(style);
+	      console.log(food);
+	    
+	  // initialize score variables 
+	  kim = 0;
+	  khloe = 0;
+	  kourtney = 0;
+	  kris = 0;
+	  
+	  //function to calculate score for each question
+	  function eachscore(x){
+	  if(x == "kim") { kim = kim + 1}
+	  if(x == "khloe") { khloe = khloe + 1}
+	  if(x == "kourtney") { kourtney = kourtney + 1}
+	  if(x == "kris") { kris = kris + 1}
+	  }
+	  // for the above function, you could also change the 1 to a variable so you could give more points for certain questions
+	  
+	  //call function for each question
+	  eachscore(eval("color"));
+	  eachscore(eval("vacation"));
+	  eachscore(eval("shop"));
+	  eachscore(eval("style"));
+	  eachscore(eval("food"));
+
+	   console.log(kim);
+	    console.log(khloe);
+	     console.log(kourtney);
+	      console.log(kris);
+	  
+	  
+	  
+	  all = [kim, khloe, kourtney, kris];
+	  
+	//get the max score  in the array
+	maxscore = Math.max.apply(Math,all);
+	
+    //figure out which score is the max score by identifying its index number
+	for(i=0; i<all.length; i++) {
+	if(all[i]==maxscore) {
+	highest = i;
+	}
+	}
+
+
+		   
+	  
+	
+
+// object holding scores and feedback	
+scores = [{index:0, feedback: "You got Kim Karashian! <br> <img src=kim.jpg width='300' />"},
+{index:1, feedback: "You got Khloe Karadashian! <br> <img src=khloe.jpg width='300'/>"},
+{index:2, feedback: "You got Kourtney Karadashian! <br> <img src=kourtney.jpg width='300' />"},
+{index:3, feedback: "You got Kris Karadashian! <br> <img src=kris.jpg width='300' />"}];
+
+
+
+//loop to match index to score and reply with feedback
+for(i=0;i<scores.length; i++) {
+if(highest == scores[i].index) {
+document.getElementById("answer4").innerHTML = scores[i].feedback;
+}
+}
+
+
+	   
+
+
+
+		   
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+</script>
+
+
+ 
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+
+
+	
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
